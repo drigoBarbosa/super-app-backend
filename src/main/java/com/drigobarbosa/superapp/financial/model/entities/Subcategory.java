@@ -19,7 +19,7 @@ public class Subcategory {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
     private LocalDateTime lastUpdate;
