@@ -1,6 +1,6 @@
-package com.drigobarbosa.superapp.financial.repositories;
+package com.drigobarbosa.superapp.financial.repository;
 
-import com.drigobarbosa.superapp.financial.model.entities.Category;
+import com.drigobarbosa.superapp.financial.domain.entity.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

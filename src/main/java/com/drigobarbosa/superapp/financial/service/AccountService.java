@@ -1,4 +1,4 @@
-package com.drigobarbosa.superapp.financial.services;
+package com.drigobarbosa.superapp.financial.service;
 
 import org.springframework.stereotype.Service;
 

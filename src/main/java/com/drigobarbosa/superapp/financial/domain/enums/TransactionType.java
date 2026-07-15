@@ -1,4 +1,4 @@
-package com.drigobarbosa.superapp.financial.model.enums;
+package com.drigobarbosa.superapp.financial.domain.enums;
 
 /**
  * Situação	Tipo

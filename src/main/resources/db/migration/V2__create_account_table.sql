@@ -1,4 +1,4 @@
-create table financial.tb_account
+CREATE TABLE financial.tb_account
 (
     id         UUID             PRIMARY KEY,
     name       VARCHAR(255)     NOT NULL,

@@ -1,4 +1,4 @@
-package com.drigobarbosa.superapp.financial.controllers;
+package com.drigobarbosa.superapp.financial.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 

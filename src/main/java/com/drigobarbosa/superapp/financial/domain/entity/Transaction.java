@@ -1,8 +1,8 @@
-package com.drigobarbosa.superapp.financial.model.entities;
+package com.drigobarbosa.superapp.financial.domain.entity;
 
-import com.drigobarbosa.superapp.financial.model.enums.AccountType;
-import com.drigobarbosa.superapp.financial.model.enums.PaymentMethod;
-import com.drigobarbosa.superapp.financial.model.enums.TransactionType;
+import com.drigobarbosa.superapp.financial.domain.enums.AccountType;
+import com.drigobarbosa.superapp.financial.domain.enums.PaymentMethod;
+import com.drigobarbosa.superapp.financial.domain.enums.TransactionType;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -18,17 +18,18 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Column(nullable = false)
     private String description;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private TransactionType type;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private PaymentMethod method;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "account_type", nullable = false)
     private AccountType accountType;
-
-    private LocalDateTime lastUpdate;
-
 }
