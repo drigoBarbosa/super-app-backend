@@ -36,4 +36,6 @@ public class Account extends AuditableEntity {
 
     @Column(nullable = false)
     private boolean active;
+
+
 }

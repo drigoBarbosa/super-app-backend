@@ -6,6 +6,7 @@ import com.drigobarbosa.superapp.financial.domain.enums.TransactionType;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -21,6 +22,8 @@ public class Transaction {
     @Column(nullable = false)
     private String description;
 
+    private BigDecimal amount;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private TransactionType type;
@@ -28,8 +31,4 @@ public class Transaction {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private PaymentMethod method;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "account_type", nullable = false)
-    private AccountType accountType;
 }

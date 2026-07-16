@@ -1,15 +1,15 @@
 package com.drigobarbosa.superapp.financial.domain.enums;
 
 /**
- * Situação	Tipo
- * Salário	INCOME
- * Mercado	EXPENSE
- * PIX entre contas	TRANSFER
- * Ajuste manual	ADJUSTMENT
- * Estorno	REFUND
- * Aplicação	INVESTMENT
- * Rendimento	YIELD
- * Tarifa bancária	FEE
+ * Tipo       / Situação exemplo
+ * INCOME     / Salário
+ * EXPENSE    / Mercado
+ * TRANSFER   / PIX entre contas
+ * ADJUSTMENT / Ajuste manual
+ * REFUND     / Estorno
+ * INVESTMENT / Aplicação
+ * YIELD      / Rendimento
+ * FEE        / Tarifa bancária
  */
 public enum TransactionType {
 
