@@ -1,6 +1,6 @@
 package com.drigobarbosa.superapp.financial.domain.enums;
 
-public enum PaymentMethod {
+public enum TransactionMethod {
 
     PIX,
     CASH,
@@ -9,7 +9,5 @@ public enum PaymentMethod {
     BANK_TRANSFER,
     CHECK,
     BANK_SLIP,
-    DIGITAL_WALLET,
     OTHER
-
 }
