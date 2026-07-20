@@ -24,17 +24,18 @@ public class Transaction {
     @Column(nullable = false)
     private String description;
 
+    @Column(nullable = false)
     private BigDecimal amount;
 
-    @ManyToOne
-    @JoinColumn(name = "source_account_id")
-    private Account sourceAccount;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "account_id", nullable = false)
+    private Account account;
 
-    @ManyToOne
-    @JoinColumn(name = "category_id")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "subcategory_id")
     private Subcategory subcategory;
 
