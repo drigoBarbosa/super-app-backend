@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class TransactionService {
 
-    private CreateTransactionResponse createTransaction(CreateTransactionRequest request) {
+    public CreateTransactionResponse createTransaction(CreateTransactionRequest request) {
         Transaction transaction = new Transaction();
 
         try {
