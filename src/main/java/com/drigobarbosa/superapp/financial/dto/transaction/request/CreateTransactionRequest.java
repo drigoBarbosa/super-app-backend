@@ -9,6 +9,7 @@ import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.UUID;
 
 public record CreateTransactionRequest(
         String description,
@@ -20,7 +21,7 @@ public record CreateTransactionRequest(
         LocalDate transactionDate,
 
         @NotNull
-        Account account,
+        UUID accountId,
 
         @NotNull
         Long categoryId,
