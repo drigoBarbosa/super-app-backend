@@ -28,7 +28,7 @@ public class Category extends AuditableEntity {
     @Column(length = 250)
     private String description;
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     private List<Subcategory> subcategories;
 
 }

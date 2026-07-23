@@ -35,7 +35,7 @@ public class Account extends AuditableEntity {
     private BigDecimal balance;
 
     @Column(nullable = false)
-    private boolean active;
+    private boolean active = true;
 
 
 }

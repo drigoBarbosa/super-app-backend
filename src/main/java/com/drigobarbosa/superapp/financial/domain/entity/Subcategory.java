@@ -2,6 +2,7 @@ package com.drigobarbosa.superapp.financial.domain.entity;
 
 import com.drigobarbosa.superapp.common.entity.AuditableEntity;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
