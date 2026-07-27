@@ -3,8 +3,7 @@ package com.drigobarbosa.superapp.financial.domain.entity;
 import com.drigobarbosa.superapp.common.entity.AuditableEntity;
 import com.drigobarbosa.superapp.financial.domain.enums.AccountType;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.domain.Auditable;
@@ -17,6 +16,9 @@ import java.util.UUID;
 @Entity
 @Table(name = "tb_account", schema = "financial")
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class Account extends AuditableEntity {
 
@@ -39,3 +41,4 @@ public class Account extends AuditableEntity {
 
 
 }
+

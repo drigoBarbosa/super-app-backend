@@ -32,23 +32,17 @@ public class TransactionService {
     }
 
     public CreateTransactionResponse createTransaction(CreateTransactionRequest request) {
-        Transaction transaction = new Transaction();
 
-        try {
-            Account account = accountRepository.findById(request.accountId())
-                    .orElseThrow(() -> new BusinessException("Account not found."));
-            Category category = categoryRepository.findById(request.categoryId())
-                    .orElseThrow(()  -> new BusinessException("Category not found."));
-            Subcategory subcategory = subcategoryRepository.findById(request.subcategoryId())
-                    .orElseThrow(() -> new BusinessException("Subcategory not found."));
+        Account account = accountRepository.findById(request.accountId())
+                .orElseThrow(() -> new BusinessException("Account not found."));
+        Category category = categoryRepository.findById(request.categoryId())
+                .orElseThrow(()  -> new BusinessException("Category not found."));
+        Subcategory subcategory = subcategoryRepository.findById(request.subcategoryId())
+                .orElseThrow(() -> new BusinessException("Subcategory not found."));
 
-            transaction = transactionMapper.toEntity(request, account, category, subcategory);
+        Transaction transaction = transactionMapper.toEntity(request, account, category, subcategory);
 
-            System.out.println(transaction);
-
-        } catch (Exception e) {
-            log.error("Erro ao tentar criar uma transação.", e);
-        }
+        System.out.println(transaction);
         return null;
     }
 
