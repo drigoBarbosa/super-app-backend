@@ -1,8 +1,8 @@
 package com.drigobarbosa.superapp.financial.service;
 
 import com.drigobarbosa.superapp.financial.domain.entity.Account;
-import com.drigobarbosa.superapp.financial.dto.account.request.CreateAccountRequest;
-import com.drigobarbosa.superapp.financial.dto.account.response.CreateAccountResponse;
+import com.drigobarbosa.superapp.financial.dto.account.request.AccountRequest;
+import com.drigobarbosa.superapp.financial.dto.account.response.AccountResponse;
 import com.drigobarbosa.superapp.financial.mapper.AccountMapper;
 import com.drigobarbosa.superapp.financial.repository.AccountRepository;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ public class AccountService {
         this.accountMapper = accountMapper;
     }
 
-    public CreateAccountResponse createAccount(CreateAccountRequest request) {
+    public AccountResponse createAccount(AccountRequest request) {
         Account account = accountMapper.toEntity(request);
         Account accountSaved = accountRepository.save(account);
         return accountMapper.toResponse(accountSaved);

@@ -1,18 +1,16 @@
-package com.drigobarbosa.superapp.financial.dto.account.request;
+package com.drigobarbosa.superapp.financial.dto.account.response;
 
 import com.drigobarbosa.superapp.financial.domain.enums.AccountType;
-import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 @Builder
-public record CreateAccountRequest(
-        @NotNull
+public record AccountResponse(
+        UUID id,
         String name,
-        @NotNull
         AccountType type,
-        @NotNull
         BigDecimal balance,
         boolean active
-) { }
+) {};

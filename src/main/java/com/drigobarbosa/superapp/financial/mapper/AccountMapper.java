@@ -1,8 +1,8 @@
 package com.drigobarbosa.superapp.financial.mapper;
 
 import com.drigobarbosa.superapp.financial.domain.entity.Account;
-import com.drigobarbosa.superapp.financial.dto.account.request.CreateAccountRequest;
-import com.drigobarbosa.superapp.financial.dto.account.response.CreateAccountResponse;
+import com.drigobarbosa.superapp.financial.dto.account.request.AccountRequest;
+import com.drigobarbosa.superapp.financial.dto.account.response.AccountResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
 
@@ -10,10 +10,10 @@ import org.mapstruct.MappingConstants;
 public interface AccountMapper {
 
     Account toEntity(
-            CreateAccountRequest createAccountRequest
+            AccountRequest accountRequest
     );
 
-    CreateAccountResponse toResponse(
+    AccountResponse toResponse(
             Account account
     );
 
