@@ -7,13 +7,12 @@ import java.math.BigDecimal;
 
 public class AccountRequestFactory {
 
-    public static AccountRequest cashInHand() {
+    public static AccountRequest.AccountRequestBuilder cashInHand() {
         return AccountRequest
                 .builder()
                 .name("Dinheiro em Mãos")
                 .type(AccountType.CASH)
-                .balance(BigDecimal.ZERO)
-                .build();
+                .balance(BigDecimal.ZERO);
     }
 
 }

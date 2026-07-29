@@ -23,4 +23,8 @@ public class AccountService {
         Account accountSaved = accountRepository.save(account);
         return accountMapper.toResponse(accountSaved);
     }
+
+    public AccountResponse updateAccount(AccountRequest accountRequest) {
+        return null;
+    }
 }

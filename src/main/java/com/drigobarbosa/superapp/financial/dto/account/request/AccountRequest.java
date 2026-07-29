@@ -5,9 +5,11 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 @Builder
 public record AccountRequest(
+        UUID id,
         @NotNull
         String name,
         @NotNull

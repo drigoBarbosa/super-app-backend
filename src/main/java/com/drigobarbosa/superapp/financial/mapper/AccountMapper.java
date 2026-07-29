@@ -5,6 +5,7 @@ import com.drigobarbosa.superapp.financial.dto.account.request.AccountRequest;
 import com.drigobarbosa.superapp.financial.dto.account.response.AccountResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
+import org.mapstruct.MappingTarget;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface AccountMapper {
@@ -15,6 +16,11 @@ public interface AccountMapper {
 
     AccountResponse toResponse(
             Account account
+    );
+
+    Account updateEntity(
+            AccountRequest accountRequest,
+            @MappingTarget Account account
     );
 
 }
