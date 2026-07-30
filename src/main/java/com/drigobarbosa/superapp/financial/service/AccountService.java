@@ -1,5 +1,7 @@
 package com.drigobarbosa.superapp.financial.service;
 
+import com.drigobarbosa.superapp.common.exception.BusinessException;
+import com.drigobarbosa.superapp.common.exception.NotFoundException;
 import com.drigobarbosa.superapp.financial.domain.entity.Account;
 import com.drigobarbosa.superapp.financial.dto.account.request.AccountRequest;
 import com.drigobarbosa.superapp.financial.dto.account.response.AccountResponse;
@@ -25,6 +27,11 @@ public class AccountService {
     }
 
     public AccountResponse updateAccount(AccountRequest accountRequest) {
-        return null;
+        Account account = accountRepository.findById(accountRequest.id())
+                .orElseThrow(() -> new NotFoundException("Account not found."));
+
+        account = accountMapper.updateEntity(accountRequest, account);
+        Account accountSaved = accountRepository.save(account);
+        return accountMapper.toResponse(accountSaved);
     }
 }

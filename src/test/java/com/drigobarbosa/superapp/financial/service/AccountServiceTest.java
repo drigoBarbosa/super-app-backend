@@ -63,6 +63,7 @@ public class AccountServiceTest {
         AccountResponse result = accountService.createAccount(accountRequest);
 
         // Assert
+        verify(accountRepository).findById(any());
         verify(accountMapper).toEntity(accountRequest);
         verify(accountRepository).save(account);
         verify(accountMapper).toResponse(account);
@@ -77,6 +78,7 @@ public class AccountServiceTest {
                 .name("Mudando nome")
                 .type(AccountType.DIGITAL_WALLET)
                 .balance(BigDecimal.valueOf(100L))
+                .active(true)
                 .build();
 
         AccountResponse accountResponse = AccountResponseFactory
@@ -85,6 +87,7 @@ public class AccountServiceTest {
                 .name("Mudando nome")
                 .type(AccountType.DIGITAL_WALLET)
                 .balance(BigDecimal.valueOf(100L))
+                .active(true)
                 .build();
 
         Account account = Account.builder()
